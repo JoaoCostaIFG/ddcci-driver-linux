@@ -1228,10 +1228,10 @@ static const struct ddcci_device_id *ddcci_match_id(const struct ddcci_device_id
 	return NULL;
 }
 
-static int ddcci_device_match(struct device *dev, struct device_driver *drv)
+static int ddcci_device_match(struct device *dev, DDCCI_DRV_CONST struct device_driver *drv)
 {
 	struct ddcci_device	*device = ddcci_verify_device(dev);
-	struct ddcci_driver	*driver;
+	DDCCI_DRV_CONST struct ddcci_driver	*driver;
 
 	if (!device)
 		return 0;
@@ -1247,7 +1247,7 @@ static int ddcci_device_match(struct device *dev, struct device_driver *drv)
 static int ddcci_device_probe(struct device *dev)
 {
 	struct ddcci_device	*device = ddcci_verify_device(dev);
-	struct ddcci_driver	*driver;
+	DDCCI_DRV_CONST struct ddcci_driver	*driver;
 	const struct ddcci_device_id *id;
 	int ret = 0;
 
@@ -1268,7 +1268,7 @@ static int ddcci_device_probe(struct device *dev)
 static int ddcci_device_remove(struct device *dev)
 {
 	struct ddcci_device	*device = ddcci_verify_device(dev);
-	struct ddcci_driver	*driver;
+	DDCCI_DRV_CONST struct ddcci_driver	*driver;
 	int ret = 0;
 
 	if (!device)

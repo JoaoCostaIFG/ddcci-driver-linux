@@ -131,7 +131,13 @@ struct ddcci_driver {
 	struct device_driver driver;
 	struct ddcci_device_id *id_table;
 };
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(6, 11, 0)
+#define to_ddcci_driver(d) container_of_const(d, struct ddcci_driver, driver)
+#define DDCCI_DRV_CONST const
+#else
 #define to_ddcci_driver(d) container_of(d, struct ddcci_driver, driver)
+#define DDCCI_DRV_CONST
+#endif
 
 int ddcci_register_driver(struct module *owner, struct ddcci_driver *driver);
 #define ddcci_add_driver(driver) \
