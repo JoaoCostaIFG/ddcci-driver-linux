@@ -1780,7 +1780,7 @@ static int ddcci_remove(struct i2c_client *client)
 
 	mutex_lock(&drv_data->lock);
 	while (1) {
-		dev = bus_find_device(&ddcci_bus_type, NULL, client,
+		dev = bus_find_device(&ddcci_bus_type, NULL, &client->dev,
 				      ddcci_remove_helper);
 		if (!dev)
 			break;
