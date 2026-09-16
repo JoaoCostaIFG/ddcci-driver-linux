@@ -765,7 +765,7 @@ static ssize_t ddcci_attr_prot_show(struct device *dev,
 
 	if (likely(device != NULL)) {
 		len = strnlen(device->prot, sizeof(device->prot));
-		strncpy(buf, device->prot, PAGE_SIZE);
+		strscpy(buf, device->prot, PAGE_SIZE);
 		if (len == 0) {
 			ret = len;
 		} else if (likely(len < PAGE_SIZE)) {
@@ -787,7 +787,7 @@ static ssize_t ddcci_attr_type_show(struct device *dev,
 
 	if (likely(device != NULL)) {
 		len = strnlen(device->type, sizeof(device->type));
-		strncpy(buf, device->type, PAGE_SIZE);
+		strscpy(buf, device->type, PAGE_SIZE);
 		if (len == 0) {
 			ret = len;
 		} else if (likely(len < PAGE_SIZE)) {
@@ -809,7 +809,7 @@ static ssize_t ddcci_attr_model_show(struct device *dev,
 
 	if (likely(device != NULL)) {
 		len = strnlen(device->model, sizeof(device->model));
-		strncpy(buf, device->model, PAGE_SIZE);
+		strscpy(buf, device->model, PAGE_SIZE);
 		if (len == 0) {
 			ret = len;
 		} else if (likely(len < PAGE_SIZE)) {
@@ -831,7 +831,7 @@ static ssize_t ddcci_attr_vendor_show(struct device *dev,
 
 	if (likely(device != NULL)) {
 		len = strnlen(device->vendor, sizeof(device->vendor));
-		strncpy(buf, device->vendor, PAGE_SIZE);
+		strscpy(buf, device->vendor, PAGE_SIZE);
 		if (len == 0) {
 			ret = len;
 		} else if (likely(len < PAGE_SIZE)) {
@@ -853,7 +853,7 @@ static ssize_t ddcci_attr_module_show(struct device *dev,
 
 	if (likely(device != NULL)) {
 		len = strnlen(device->module, sizeof(device->module));
-		strncpy(buf, device->module, PAGE_SIZE);
+		strscpy(buf, device->module, PAGE_SIZE);
 		if (len == 0) {
 			ret = len;
 		} else if (likely(len < PAGE_SIZE)) {
