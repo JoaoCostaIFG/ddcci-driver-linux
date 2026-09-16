@@ -11,7 +11,7 @@
 pkgname=ddcci-driver-linux-joaocostaifg-dkms-git
 _pkgname=${pkgname%-git}
 _reponame=ddcci-driver-linux
-pkgver=0.4.5.r11.gb298333
+pkgver=0.4.5.r11.g4413f0e
 pkgrel=1
 epoch=1
 pkgdesc="A pair of Linux kernel drivers for DDC/CI monitors (DKMS) - fork with Linux 7.2+ fixes"

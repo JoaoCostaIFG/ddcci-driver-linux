@@ -1,6 +1,7 @@
 # makepkg build artifacts
 src/
 pkg/
+ddcci-driver-linux/
 *.pkg.tar.zst
 *.pkg.tar.xz
 
